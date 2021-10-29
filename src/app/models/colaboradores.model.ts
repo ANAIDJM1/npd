@@ -31,7 +31,7 @@ export class Colaboradores {
         this.pass="";        
         this.extra_hours=0;
         this.extra_minutes=0;       
-        this.gender="M";
+        this.gender="F";
         this.mobile="";
     }  
 
