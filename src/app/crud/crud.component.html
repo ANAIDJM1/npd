@@ -1,0 +1,61 @@
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/inicio">
+        <i class="fa fa-arrow-left"></i>
+        Regresar
+      </button>
+    </div>
+</div>
+
+<div class="row animated fadeIn faster">
+    <div class="col">
+        <form (ngSubmit)="guardar(formu)" #formu="ngForm">
+
+
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre " [(ngModel)]="colaborador.names" name="names" required>
+            </div>
+
+            <div class="form-group">
+                <label>Apellido paterno </label>
+                <input type="text" class="form-control" [(ngModel)]="colaborador.paternal" name="paternal" placeholder="Apellido patino">
+            </div>
+            <div class="form-group">
+                <label>Apellido Materno</label>
+                <input type="text" class="form-control" [(ngModel)]="colaborador.maternal" name="maternal" placeholder="Apellido matino">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Sexo</label>
+                <select class="form-control" name="gender">
+                  <option value="M">Masculino</option>
+                  <option value="F">Femenino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Celular</label>
+                <input type="text" class="form-control" [(ngModel)]="colaborador.mobile" name="mobile" placeholder="Celular">
+            </div>
+
+            <div class="form-group">
+                <label>Horas semanales</label>
+                <input type="text" class="form-control" [(ngModel)]="colaborador.weekly_hours" name="weekly_hours" placeholder="Horas semanales">
+            </div>
+
+
+
+
+            <hr>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25">
+            <i class="fa fa-save"></i>
+            Guardar
+          </button>
+            </div>
+
+
+        </form>
+
+
+    </div>
+</div>

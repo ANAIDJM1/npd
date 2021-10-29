@@ -1,0 +1,43 @@
+<h1>Colaboradores</h1>
+<br>
+<div class="row">
+    <div class="col text-right">
+        <button routerLink="/crud/nuevo" class="btn btn-primary">
+        <i class="fa fa-plus"></i>
+        Agregar
+      </button>
+    </div>
+</div>
+<div class="form-material m-t-40">
+    <label>Ingrese datos <span class="help"></span></label>
+    <input type="text" class="form-control form-control-line" #termino (keyup)="buscar(termino.value)" />
+</div>
+<table class="table mt-3 animated fadeIn faster animated fadeIn faster">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">DNI</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">SEMANALE</th>
+            <th scope="col">OPCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let colaborador of Colaboradores.content; let i = index">
+            <!-- <th scope="row">{{ i + 1 }}</th> -->
+            <td> {{colaborador.dni}}</td>
+            <td>{{ colaborador.names }} <br>{{ colaborador.mobile }} </td>
+            <td>{{ colaborador.weekly_hours }}</td>
+            <td>
+
+                <button class="btn btn-info mr-1" [routerLink]="['/crud', colaborador.dni ]">
+       <i class="fa fa-pen"></i>
+     
+     </button>
+
+                <button class="btn btn-danger" (click)=borrar(colaborador.idemployee)>
+       <i class=" fa fa-trash " ></i>
+     </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
