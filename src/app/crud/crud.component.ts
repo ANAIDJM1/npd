@@ -42,7 +42,8 @@ export class CrudComponent implements OnInit {
     });
     Swal.showLoading();
     let peticion: Observable<any>;
-    if(this.numero=!null){
+    if(this.numero=!null)
+    {
       this.colaborador2 = form.value;
       peticion = this.colaboradorService.updateColaboradores( this.colaborador2 );
     }else{
