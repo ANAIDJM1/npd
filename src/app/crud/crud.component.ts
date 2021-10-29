@@ -15,6 +15,7 @@ export class CrudComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,private colaboradorService:ColaboradorService) { }
   colaborador:any=[];
+ 
   colaborador2!:Colaboradores;
   numero:any =null;
   
@@ -42,12 +43,15 @@ export class CrudComponent implements OnInit {
     });
     Swal.showLoading();
     let peticion: Observable<any>;
-    if(this.numero=!null)
-    {
-      this.colaborador2 = form.value;
+    if(this.numero=!null){
+      this.colaborador2 = new Colaboradores(form.value.paternal,form.value.maternal,form.value.names,form.value.weekly_hours,form.value.dni,
+        form.value.mobile);
+        console.log(this.colaborador2 );
+
       peticion = this.colaboradorService.updateColaboradores( this.colaborador2 );
     }else{
-      this.colaborador2 = form.value;
+      // this.colaborador2 = form.value;
+      console.log( this.colaborador2);
       peticion = this.colaboradorService.createColaboradores( this.colaborador2 );
     }
     peticion.subscribe( resp => {

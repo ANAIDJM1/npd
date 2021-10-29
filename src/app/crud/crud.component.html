@@ -9,9 +9,12 @@
 
 <div class="row animated fadeIn faster">
     <div class="col">
-        <form (ngSubmit)="guardar(formu)" #formu="ngForm">
+        <form (ngSubmit)="guardar( f )" #f="ngForm">
 
-
+            <div class="form-group">
+                <label>DNI</label>
+                <input type="text" class="form-control" placeholder="DNI " [(ngModel)]="colaborador.dni" name="dni" required>
+            </div>
             <div class="form-group">
                 <label>Nombre</label>
                 <input type="text" class="form-control" placeholder="Nombre " [(ngModel)]="colaborador.names" name="names" required>
@@ -19,11 +22,11 @@
 
             <div class="form-group">
                 <label>Apellido paterno </label>
-                <input type="text" class="form-control" [(ngModel)]="colaborador.paternal" name="paternal" placeholder="Apellido patino">
+                <input type="text" class="form-control" [(ngModel)]="colaborador.paternal" name="paternal" placeholder="Apellido paterno">
             </div>
             <div class="form-group">
-                <label>Apellido Materno</label>
-                <input type="text" class="form-control" [(ngModel)]="colaborador.maternal" name="maternal" placeholder="Apellido matino">
+                <label>Apellido Materna</label>
+                <input type="text" class="form-control" [(ngModel)]="colaborador.maternal" name="maternal" placeholder="Apellido materna">
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Sexo</label>
